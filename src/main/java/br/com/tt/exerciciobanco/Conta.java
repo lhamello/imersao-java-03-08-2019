@@ -8,4 +8,9 @@ public class Conta {
 	// array
 	private Movimento[] movimentos;
 	
+	public Conta(Integer agencia, Integer numero) {
+		this.agencia = agencia;
+		this.numero = numero;
+		this.saldo = 0.0;
+	}
 }

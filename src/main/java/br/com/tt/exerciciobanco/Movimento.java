@@ -6,7 +6,7 @@ public class Movimento {
 	private String tipo;
 	private Double valor;
 	private String descricao;
-
+	
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
