@@ -9,6 +9,12 @@ public class Exercicio04 {
 
 	public static void main(String[] args) {
 		double raio = 7;
+		double pi = 3.1415926;
+		
+		// Forma 1
+		System.out.println(pi * (raio * raio));
+		
+		// Forma 2
 		System.out.println(Math.PI * Math.pow(raio, 2));
 	}
 }
