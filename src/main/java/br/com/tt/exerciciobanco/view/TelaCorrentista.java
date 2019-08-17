@@ -1,6 +1,10 @@
-package br.com.tt.exerciciobanco;
+package br.com.tt.exerciciobanco.view;
 
 import java.util.Scanner;
+
+import br.com.tt.exerciciobanco.infra.DadosSingleton;
+import br.com.tt.exerciciobanco.model.Conta;
+import br.com.tt.exerciciobanco.model.Correntista;
 
 public class TelaCorrentista {
 	
@@ -24,7 +28,7 @@ public class TelaCorrentista {
 		do {
 			imprimirMenu();
 			opcao = lerOpcao();
-			DadosSingleton d = DadosSingleton.getDadosSingleton();
+			DadosSingleton bancoDeDados = DadosSingleton.getDadosSingleton();
 			
 			switch (opcao) {
 			case 1:
@@ -41,11 +45,19 @@ public class TelaCorrentista {
 				Conta contaCorrentista = new Conta(agenciaConta, numeroConta);
 				Correntista correntista = new Correntista(nomeCorrentista, 
 						contaCorrentista);
+				bancoDeDados.adicionarCorrentista(correntista);
 				System.out.println("Correntista criado");
 				break;
 			case 2:
-				// chamar tela movimento
-				System.out.println("Listar correntista");
+				Correntista[] correntistas = bancoDeDados.listarCorrentistas();
+				
+				for (Correntista correntistaCadastrado : correntistas) {
+					
+					if (correntistaCadastrado != null) {
+						System.out.println(correntistaCadastrado);
+					}
+				}
+				
 				break;
 			case 0:
 				System.out.println("Voltar");
@@ -53,6 +65,6 @@ public class TelaCorrentista {
 			default:
 				System.out.println("Opção inválida. Selecione outra opção.");
 			}
-		} while (opcao != 0);
+		} while (true);
 	}
 }

@@ -2,26 +2,16 @@ package br.com.tt.exerciciobanco;
 
 import java.util.Scanner;
 
+import br.com.tt.exerciciobanco.infra.DadosSingleton;
+import br.com.tt.exerciciobanco.view.TelaCorrentista;
+
 public class Programa {
-	
-	private static void imprimirMenu() {
-		System.out.println(" ========= TELA PRINCIPAL =========");
-		System.out.println(" Digite: ");
-		System.out.println("  [1] para tela correntista");
-		System.out.println("  [2] para tela movimento");
-		System.out.println("  [0] para sair");
-	}
-	
-	private static int lerOpcao() {
-		Scanner scanner = new Scanner(System.in);
-		return scanner.nextInt();
-	}
-	
+
 	public static void main(String[] args) {
 		imprimirMenu();
 		int opcao = lerOpcao();
 		
-		while (opcao != 0) {
+		while (true) {
 			switch (opcao) {
 			case 1:
 				TelaCorrentista tela = new TelaCorrentista();
@@ -60,5 +50,18 @@ public class Programa {
 //		movimento.setValor(valorLido);
 //		movimento.setDescricao(descricaoLida);
 //		System.out.println(movimento);
+	}
+	
+	private static int lerOpcao() {
+		Scanner scanner = new Scanner(System.in);
+		return scanner.nextInt();
+	}
+	
+	private static void imprimirMenu() {
+		System.out.println(" ========= TELA PRINCIPAL =========");
+		System.out.println(" Digite: ");
+		System.out.println("  [1] para tela correntista");
+		System.out.println("  [2] para tela movimento");
+		System.out.println("  [0] para sair");
 	}
 }

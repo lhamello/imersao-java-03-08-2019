@@ -1,4 +1,4 @@
-package br.com.tt.exerciciobanco;
+package br.com.tt.exerciciobanco.model;
 
 public class Conta {
 
@@ -12,5 +12,14 @@ public class Conta {
 		this.agencia = agencia;
 		this.numero = numero;
 		this.saldo = 0.0;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s[agencia=%s,numero=%s,saldo=R$ %.2f]", 
+				"Conta",
+				agencia,
+				numero,
+				saldo);
 	}
 }

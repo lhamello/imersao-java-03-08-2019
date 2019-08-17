@@ -1,4 +1,4 @@
-package br.com.tt.exerciciobanco;
+package br.com.tt.exerciciobanco.model;
 
 public class Correntista {
 
@@ -8,5 +8,13 @@ public class Correntista {
 	public Correntista(String nomeCorrentista, Conta contaCorrentista) {
 		this.nome = nomeCorrentista;
 		this.conta = contaCorrentista;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format(" - %s[nome=%s,conta=%s]", 
+				"Correntista",
+				nome,
+				conta);
 	}
 }

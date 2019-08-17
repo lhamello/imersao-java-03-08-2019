@@ -1,4 +1,4 @@
-package br.com.tt.exerciciobanco;
+package br.com.tt.exerciciobanco.model;
 
 public class Movimento {
 
