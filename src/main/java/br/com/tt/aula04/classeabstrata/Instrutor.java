@@ -18,4 +18,9 @@ public class Instrutor extends Empregado {
 	public void salvar() {
 		System.out.println("Instrutor salvo!");
 	}
+	
+	@Override
+	public void imprimirSaudacao() {
+		System.out.println("Olá eu sou um Instrutor.");
+	}
 }

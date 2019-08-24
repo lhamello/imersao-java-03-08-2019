@@ -18,4 +18,20 @@ public class Vendedor extends Empregado {
 	public void salvar() {
 		System.out.println("Vendedor salvo!");
 	}
+	
+	public double getSalario() {
+		return 0;
+	}
+	
+	public double getSalario(int w) {
+		return 0;
+	}
+	
+	public double getSalario(String x) {
+		return 0;
+	}
+	
+	public double getSalario(int w, String x) {
+		return 0;
+	}
 }

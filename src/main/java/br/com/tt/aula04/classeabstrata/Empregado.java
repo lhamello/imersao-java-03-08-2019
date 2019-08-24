@@ -19,4 +19,8 @@ public abstract class Empregado {
 	public int getIdade() {
 		return idade;
 	}
+	
+	public void imprimirSaudacao() {
+		System.out.println("Olá eu sou um empregado.");
+	}
 }

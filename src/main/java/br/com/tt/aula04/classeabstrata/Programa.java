@@ -9,9 +9,13 @@ public class Programa {
 		System.out.println("Vendedor: ");
 		System.out.println(vendedor.calcularRendimentos());
 		vendedor.salvar();
+		vendedor.imprimirSaudacao();
+		
+		System.out.println("---------------------");
 		
 		System.out.println("Instrutor: ");
 		System.out.println(instrutor.calcularRendimentos());
 		instrutor.salvar();
+		instrutor.imprimirSaudacao();
 	}
 }
