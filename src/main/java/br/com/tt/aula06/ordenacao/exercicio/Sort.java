@@ -2,7 +2,12 @@ package br.com.tt.aula06.ordenacao.exercicio;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Sort {
 
@@ -13,19 +18,40 @@ public class Sort {
      *     Ordene as pessoas pelo nome.
      */
     public static void main(String[] args) throws FileNotFoundException {
-
         Scanner sc = new Scanner(getInputFile());
-
+        Set<String> nomes = new HashSet<>();
+        List<Pessoa> pessoas = new LinkedList<>();
+        
         while (sc.hasNextLine()) {
             String linha = sc.nextLine();
             String[] partes = linha.split(";");
 
             String id = partes[0];
             String nome = partes[1];
+            
+            nomes.add(nome);
+            pessoas.add(new Pessoa(id, nome));
 
-            System.out.println(id);
-            System.out.println(nome);
+//            System.out.println(id);
+//            System.out.println(nome);
         }
+        
+        System.out.println("----- HashSet<String>");
+        
+        List<String> listaDeNomes = new LinkedList<>(nomes);
+        Collections.sort(listaDeNomes);
+        
+        for (String nome : listaDeNomes) {
+			System.out.println(nome);
+		}
+        
+        System.out.println("----- LinkedList<Pessoa>");
+        Collections.sort(pessoas);
+        
+        for (Pessoa pessoa : pessoas) {
+			System.out.println(pessoa);
+		}
+        
         sc.close();
     }
 
